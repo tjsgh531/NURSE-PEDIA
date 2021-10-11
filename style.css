@@ -1,8 +1,20 @@
 /* brand_color : rgb(255, 101, 101) */
+/* basic_text_color  color: rgba(80, 80, 80, 0.7); */
+/* *{
+    border: red 1px dotted;
+} */
+ul{
+    list-style: none;
+}
+.wrap{
+    min-width: 960px;
+}
+.hidden{
+    display: none;
+}
 .header{
     position: relative;
-
-    padding: 10px 30px;
+    max-height: 300px;
 
     display: flex;
     flex-direction: row;
@@ -11,6 +23,10 @@
 }
 .logo{
     padding: 10px;
+    display: flex;
+
+    cursor: pointer;
+    margin-left: 30px;
 }
 .logo span{   
     color: rgb(255, 101, 101);
@@ -20,7 +36,8 @@
 }
 .global_nav{
     position: relative;
-    width: 70%;
+    height: 15vh;
+    max-width: 70vw;
 
     display: flex;
     
@@ -28,13 +45,49 @@
     padding: 0 30px;
 }
 .nav_btn{
-    margin: 0 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    height: inherit;
+    padding: 0 2rem;
 
     color: rgba(80, 80, 80, 0.7);
     font-weight: 900;
     font-size: 17px;
     word-spacing: -3px;
+    white-space: nowrap;
+
+    cursor: pointer;
 }
+.nav_btn:hover{
+    color: rgb(255, 101, 101);
+    background-color: rgba(220, 220, 220, 0.1);
+}
+.hidden_nav{
+    position: absolute;
+    left:0;
+    transform: translateY(-1px);
+
+    background-color: rgba(250,250,250,0.5);
+}
+.sub_nav{
+    box-sizing: border-box;
+    padding-top: 5px;
+    color: rgba(80, 80, 80, 0.7);
+
+    overflow: hidden;
+}
+
+.sub_nav li{
+    padding: 5px 0;
+    font-size: 14px;
+}
+.sub_nav li:hover{
+    color:rgb(255, 101, 101);
+
+}
+
 .sign_btn{
     position: absolute;
     right: 30px;
@@ -53,23 +106,104 @@
     margin: 0 5px;
 
     text-align: center;
-    color: rgb(122, 121, 121);
     font-weight: 800;
 
     border-radius: 2rem;
-    background-color:rgba(219, 218, 218, 0.822) ;
+
+    cursor: pointer;
+}
+.sign_in{
+    background-color:rgb(255, 101, 101);
+    color: #eee;
+}
+.sign_up{
+    background-color: rgba(219, 218, 218, 0.822);
+    color: rgba(80, 80, 80, 0.7);
 }
 
 .division{
     position: absolute;
-    bottom: 0;left: 0;
+    bottom: 0;left: 0; z-index: -10;
 
     width: 100vw;
-    height: 1px;
+    height: 1.5px;
 
     background-color: #ccc;
 }
-
-.container{
+.nav_pointer{
+    position: absolute;
     
+    left:0;
+    height: 2px; width: 0px;
+    background-color:rgb(255, 101, 101);
+
+    transition:  width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.popart{
+    margin: 50px;
+}
+.popart_title{
+    color: rgba(80, 80, 80, 0.8);
+    font-size: 18px;
+    font-weight: 900;
+}
+.popart_container{
+    position:relative;
+    margin-top: 1.5rem;
+
+    min-height: 300px;
+    width: inherit;
+    padding: 2rem;
+
+    border:#bbb 2px solid;
+    border-radius: 1.5rem;
+}
+.popart_more{
+    position: absolute;
+    right: 1.5rem; top: 1.5rem;
+
+    display: flex;
+    flex-direction: row;
+
+    cursor: pointer;
+}
+.popart_more > p{
+    margin-right:0.3rem;
+    color: black;
+    font-weight: 900;
+}
+.more_icon{
+    position: relative;
+
+    width: 1.5rem; height: 1.5rem;
+    border-radius: 5px;
+    border: 2px solid black;
+
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+}
+.more_icon > span{
+    position: absolute;
+    top: 30%; left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+.popart_content{
+    display: flex;
+    flex-direction: row;    
+}
+.popart_content_sort{
+    color:rgb(255, 101, 101);
+    margin-right: 30px;  margin-bottom: 15px;
+    font-weight: 900;
+}
+.popart_content_title{
+    font-weight: 900;
+    cursor: pointer;
+}
+.view_number{
+    color:rgb(255, 101, 101);
 }
